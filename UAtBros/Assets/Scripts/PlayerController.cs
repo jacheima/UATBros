@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
-    [HideInInspector]public Pawn pawn;
-
-    private void Start()
+    protected override void Update()
     {
-        pawn = GetComponent<Pawn>();
-    }
-
-    private void Update()
-    {
-        //our direction to move
-        float direction = 0;
+        direction = 0;
 
         //if the player moves left
         if (Input.GetKey(KeyCode.A))
@@ -31,10 +23,9 @@ public class PlayerController : MonoBehaviour
         //if the player presses jump
         if(pawn.IsGrounded() && Input.GetKeyDown(KeyCode.W ))
         {
-            pawn.Jump();
-
+            //Jump();
         }
 
-        pawn.Move(direction);
+        base.Update();
     }
 }

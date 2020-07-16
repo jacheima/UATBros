@@ -11,7 +11,7 @@ public class Pawn : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D body2D;
-    private Animator animator;
+    public Animator animator;
     private BoxCollider2D boxCollider2D;
 
 
@@ -26,7 +26,7 @@ public class Pawn : MonoBehaviour
     {
         if(direction != 0f)
         {
-            animator.SetBool("isRunning", true);
+            
 
             if(direction < 0)
             {
@@ -43,7 +43,7 @@ public class Pawn : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isRunning", false);
+            //animator.SetBool("isRunning", false);
         }
 
         Vector3 myPos = transform.position;
